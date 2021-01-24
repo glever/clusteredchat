@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  chat-rabbitmq:
+    hostname: rabbit1
+    build:
+      context: ./docker/rabbit-stomp
+#    environment:
+#      - "SOMETHING": "something"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "15674:15674"
+      - "61613:61613"
