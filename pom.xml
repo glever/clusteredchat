@@ -17,7 +17,6 @@
 
     <modules>
         <module>service</module>
-        <module>api</module>
         <module>app</module>
     </modules>
 

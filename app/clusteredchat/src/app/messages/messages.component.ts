@@ -15,13 +15,13 @@ export class MessagesComponent implements OnInit {
   constructor(private rxStompService: RxStompService) {}
 
   ngOnInit() {
-    this.topicSubscription = this.rxStompService.watch('/topic/demo').subscribe((message: Message) => {
+    this.topicSubscription = this.rxStompService.watch('/queue/greeting').subscribe((message: Message) => {
       this.receivedMessages.push(message.body);
     });
   }
 
   onSendMessage() {
     const message = `Message generated at ${new Date()}`;
-    this.rxStompService.publish({ destination: '/topic/demo', body: message });
+    this.rxStompService.publish({ destination: '/app/greeting', body: message });
   }
 }
